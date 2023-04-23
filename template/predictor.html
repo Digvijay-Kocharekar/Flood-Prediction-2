@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for('static',filename='predictor.css')}}>
+    <title>Flood Prediction</title>
+</head>
+<body>
+    <!-- <section id="prediction-form" > -->
+    <div class="container my-3"></div>
+
+        <!-- displaying error statement -->
+
+        <!-- {% if error_statement %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{error_statement}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endif %} -->
+
+
+        <!-- <form class="form" , method="POST"> -->
+        <!-- <form class="form" method="POST" action="/"> -->
+        <form method="POST" action="/predict">
+            <h1 class="my-3 text-center">Predictor</h1>
+            <div class="row">
+
+
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="duration" class="form-label"> Duration</label>
+                        <input type="duration" class="form-control" id="duration" name="Duration" value="{{Duration}}">
+                    </div>
+                </div>
+
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="area_affected" class="form-label"> Area Affected</label>
+                        <input type="area_affected" class="form-control" id="area_affected" name="Area_affected" value="{{Area_affected}}">
+                    </div>
+                </div>
+
+                <div class="col-md-6 my-2" >
+                    <div class="md-form">
+                        <label for="main_cause" class="form-label"> Main Cause</label>
+                        <!-- <input type="main_cause" class="form-control" id="main_cause" name="main_cause"> -->
+                        <select name="Main_cause" id="main_cause" class="selectpicker form-control" required="1" value="{{Main_cause}}" >
+
+                        
+                            <option value="0">Select Main Cause</option>
+                            <option value="1">Main Cause_Dam/Levy, break or release</option>
+                            <option value="2">Main Cause_Extra-tropical Cyclone</option>
+                            <option value="3">Main Cause_Heavy Rain</option>
+                            <option value="4">Main Cause_Monsoonal Rain</option>
+                            <option value="5">Main Cause_Torrential Rain</option>
+                            <option value="6">Main Cause_Tropical Cyclone</option>
+
+                        </select>
+                    </div>
+                </div>
+
+                <!-- This is just to maintain allignment -->
+                <div class="col-md-6 my-2">
+                    <div class="md-form">
+                        <label for="test11" class="test11"> </label>
+                        <!-- <input type="test11" class="form-control" id="test11" name="test11"> -->
+                    </div>
+                </div>
+
+
+                
+
+
+                <div class="col-md-6 my-2 d-flex align-items-end justify-content-around">
+
+
+                    <button class="btn btn-info button" style="margin-left: 100%;" onclick="send_data()">Predict</button>
+
+                    
+                    <!-- <button class="btn btn-info button" style="margin-left: 100%;" type="submit">Predict</button> -->
+                </div>
+
+
+
+            </div>
+        </form>
+
+        <br>
+
+        <div class="row">
+            <div class="col-12" style="text-align: center">
+                <h3><span id="predictionn"> </span></h3>
+            </div>
+
+        </div>
+    <!-- </section> -->
+    <!-- </div>
+
+
+
+    <div>
+         <h1><center> {{ prediction }} </center></h1>
+    </div>
+
+    <script>
+
+    </script> -->
+
+    <!-- send data -->
+
+
+
+    <script>
+
+        function form_handler(event)
+        {
+            event.preventDefault(); 
+        }
+
+        function send_data()
+        {
+            //suppress form default behaviour
+            //send and receive data to predict method
+            document.querySelector('form').addEventListener('submit', form_handler);
+            var fd = new FormData(document.querySelector('form')) ;
+
+
+            var xhr = new XMLHttpRequest({mozSystem: true});
+
+            xhr.open('POST', '/predict', true );
+             
+            document.getElementById("predictionn").innerHTML="Wait... Prediction Ongoing...";
+
+
+            xhr.onreadystatechange =function()
+            {
+                if(xhr.readyState == XMLHttpRequest.DONE)
+                {
+                    document.getElementById("predictionn").innerHTML=""+xhr.responseText;
+                }
+            }
+
+            xhr.onload =function(){};
+
+            xhr.send(fd);
+
+        }
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+

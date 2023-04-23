@@ -1,0 +1,44 @@
+html{
+    background: #000000;
+      /* margin-top: 100px; */
+  }
+
+#dashboard {
+	padding: 7% 10%;
+	background-color: #ddd;
+}
+
+#dashboard h2 {
+	margin-bottom: 30px;
+}
+
+#dashboard p {
+	margin-bottom: 40px;
+	padding: 0 10%;
+}
+
+#dashboard img {
+	max-height: 85vh;
+}
+
+#dashboard div {
+	margin-top: 10px;
+	padding: 0 100px;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#dashboard div img {
+	width: 100%;
+	max-height: 120px;
+}
+
+.dashboard-image {
+	padding: 0 7%;
+}
+#dashboard h2 {
+	text-align: center;
+	color: var(--primary-color);
+	font-size: 50px;
+}

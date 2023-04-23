@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs</title>
+    <link rel="stylesheet" href={{url_for('static',filename='faq1.css')}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+<body>
+<section>
+
+<h2 class="title_faq">FAQs</h2>
+
+<!-- Which ML Model is used ? -->
+<div class="faq">
+    <div class="question">
+        <h3>Which ML Model is used ?</h3>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"/>
+        </svg>
+    </div>
+    <div class="answer">
+        <p>
+            Model used is for predicting flood in this project is Random Forest Model which is a type of an ensemble model .
+        </p>
+    </div>
+</div>
+
+<!-- What is random forest ? -->
+<div class="faq">
+    <div class="question">
+        <h3>What is random forest ?</h3>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"/>
+        </svg>
+    </div>
+    <div class="answer">
+        <p>
+            Random Forest is a classifier that contains a number of decision trees on various subsets of the given dataset and takes the average to improve the predictive accuracy of that dataset.
+        </p>
+    </div>
+</div>
+
+<!-- What is Ensembling -->
+<div class="faq">
+    <div class="question">
+        <h3>What is Ensembling ?</h3>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"/>
+        </svg>
+    </div>
+    <div class="answer">
+        <p>
+            Ensemble modeling is a process where multiple diverse models are created to predict an outcome, either by using many different modeling algorithms or using different training data sets. The ensemble model then aggregates the prediction of each base model and results in once final prediction for the unseen data.
+        </p>
+    </div>
+</div>
+
+<div class="faq">
+    <div class="question">
+        <h3>What is random forest ?</h3>
+
+        <svg width="15" height="10" viewBox="0 0 42 25">
+            <path d="M3 3L21 21L39 3" 
+            stroke="white" 
+            stroke-width="7" 
+            stroke-linecap="round"/>
+        </svg>
+    </div>
+    <div class="answer">
+        <p>
+            Random forest is a commonly-used machine learning algorithm trademarked by Leo Breiman and Adele Cutler, which combines the output of multiple decision trees to reach a single result. Its ease of use and flexibility have fueled its adoption, as it handles both classification and regression problems.
+        </p>
+    </div>
+</div>
+
+
+</section>
+<script >
+const faqs = document.querySelectorAll(".faq");
+
+faqs.forEach(faq =>{
+    faq.addEventListener("click", () => {
+        faq.classList.toggle("active");
+    })
+})
+</script>
+</body>
+</html>

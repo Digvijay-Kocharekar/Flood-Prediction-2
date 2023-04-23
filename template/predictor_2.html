@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href={{url_for('static',filename='predictor_2.css')}}>
+</head>
+
+<body>
+    <div class="regform">
+        <h1>Predictor</h1>
+    </div>
+    <div class="main">
+
+        <form method="POST" action="/predict" >
+
+            
+            
+            <!-- <h2 class="name"> Duration </h2>
+            <input class="Code" type="text" name="Duration"> -->
+
+
+            <h2 class="name"> Area Affected</h2>
+            <input class="email" type="text" name="Area_affected">
+
+
+            
+
+
+            <h2 class="name">Main Cause</h2>
+            <select class="option" name="Main_cause" class="selectpicker form-control" required="1">
+                <option value="0">Select Main Cause</option>
+                <option value="1">Main Cause_Dam/Levy, break or release</option>
+                <option value="2">Main Cause_Extra-tropical Cyclone</option>
+                <option value="3">Main Cause_Heavy Rain</option>
+                <option value="4">Main Cause_Monsoonal Rain</option>
+                <option value="5">Main Cause_Torrential Rain</option>
+                <option value="6">Main Cause_Tropical Cyclone</option>
+            </select>
+
+            
+
+            <button type="submit" onclick="send_data()">Predict</button>
+
+
+        </form>
+
+        <br>
+        <div class="final_prediction">
+            <div class="col-12" style="text-align: center">
+                <h3><span id="predictionn" class="auto-type"> </span></h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- auto typed part -->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+        <script>
+
+
+    // var delayInMilliseconds = 1000;
+
+    // setTimeout(function() {
+
+        function form_handler(event)
+        {
+            event.preventDefault(); 
+        }
+
+        function send_data()
+        {
+            //suppress form default behaviour
+            //send and receive data to predict method
+            document.querySelector('form').addEventListener('submit', form_handler);
+            var fd = new FormData(document.querySelector('form')) ;
+
+
+            var xhr = new XMLHttpRequest({mozSystem: true});
+
+            xhr.open('POST', '/predict', true );
+             
+            document.getElementById("predictionn").innerHTML="Wait... Prediction Ongoing...";
+
+
+
+
+                
+                xhr.onreadystatechange =function()
+                {
+                    if(xhr.readyState == XMLHttpRequest.DONE)
+                    {
+                        document.getElementById("predictionn").innerHTML=""+xhr.responseText;
+                    }
+                }
+
+            
+
+                xhr.onload =function(){};
+
+                xhr.send(fd);
+
+            
+
+        }
+
+    // }, delayInMilliseconds);
+
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

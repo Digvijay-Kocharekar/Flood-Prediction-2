@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Flood Predictor</title>
+    <link rel="stylesheet" href={{url_for('static',filename='style1.css')}}>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+    <section>
+      <input type="checkbox" id="check">
+      <header>
+        </div>
+        <h2><a href="#" class="logo">Flash Flood</a></h2>
+        <div class="navigation">
+          <a href="#">Home</a>
+          <a href="#about">About Flash Floods</a>
+          <a href="#dashboard">Dashboard</a>
+          <a href="/visualiztion">Visualization</a>
+          <a href="/predict">Predictor</a>
+        </div>
+        <label for="check">
+        <i class="fas fa-bars menu-btn"></i>
+        <i class="fas fa-times close-btn"></i>
+        </label>
+      </header>
+
+      <div class="content" style="margin-top: 8%;">
+        <div class="info">
+          <h2>Predict Floods <br><span>Save Life</span></h2>
+
+          <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+
+          <!-- <div>
+          <p>Most floods are caused by man, not weather; deforestation, levee construction, erosion, and overgrazing all result in the loss of ecosystem services.<br>-Paul Hawken</p>
+        </div> -->
+
+        <div>
+          <p><span class="auto-type" style="font-family: fantasy"></span></p>
+        </div>
+
+          <script>
+            var typed = new Typed(".auto-type",{
+              strings : ["&quot;Most floods are caused by man, not weather; deforestation, levee construction, erosion, and overgrazing all result in the loss of ecosystem services.<br>-Paul Hawken&quot;" 
+
+              , "&quot;We must build dikes of courage to hold back the flood of fear. <br>-Martin Luther King, Jr.&quot;"
+
+              , "&quot;When the flood submerges the whole country, no raindrop may feel responsible. Finally things had lost their weightiness <br>-Erik Pevernagie&quot;"
+
+              , "&quot;Floods are 'acts of God,' but flood losses are largely acts of man. <br>-Gilbert F. White&quot;"
+
+              , "&quot;God has cared for these trees, saved them from drought, disease, avalanches, and a thousand tempests and floods. But he cannot save them from fools. <br>-John Muir&quot;"
+              
+              , "&quot;The earth will end only when God declares it's time to be over. Man will not destroy this earth. This earth will not be destroyed by a flood. <br>-John Shimkus&quot;"
+              
+              , "&quot;Have a goal in life. When water is everywhere, it is a flood, but if it is in between banks, it is a river. It is nice to have a goal, so your life force gets channelized! <br>-Sri Sri Ravi Shankar&quot;"],
+
+              typeSpeed: 15,
+              backSpeed: 5,
+              loop: true
+            })
+
+          </script>
+
+
+          <a href="#about" class="info-btn">More info</a>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="about">
+      <h2>About Flash Floods</h2>
+      <p class="about-content" style="text-align: center;">
+        This system aims to predict flash floods in various parts of our country by learning from past data. The user will input parameters such as location, expected rainfall, water levels in nearby reservoirs etc. and the system will give the probability of flash floods in the region in the upcoming few days. A large database of flash flood events consisting of more than 14 000 events are assessed for training and testing the methodology, while a multitude of data sources are utilised to acquire reliable information related to each event. A variable selection approach was employed to alleviate the complexity of the dataset and facilitate the model development process.
+        This study is among the few efforts for predicting flash flood damage across a large domain using mesoscale input variables, and the findings demonstrate the effectiveness of the proposed methodology. The societal impacts of flash floods are more significant than any other weather-related hazard. They are often manifested in the form of infrastructure damage, flooding roadways and bridges, creating deadly hazards to motorists and inundation of crops and pasture. For instance, the flash floods in Mumbai that occurred on 26th July 2005 caused heavy amount of damage to human life and property. The floods were caused by the eighth heaviest-ever recorded 24-hour rainfall figure of 944 mm (37.17 inches) which lashed the metropolis on 26 July 2005, and intermittently continued for the next day. 644mm (25.35 inches) was received within the 12-hour period between 8 am and 8 pm. Torrential rainfall continued for the next week. The highest 24-hour period in India was 1,168 mm (46.0 inches) in Aminidivi in the Union Territory of Lakshadweep on 6 May 2004 although some reports suggest that it was a new Indian record. The previous record high rainfall in a 24-hour period for Mumbai was 575 mm (22.6 inches) in 1974. Some of these hazards can be anticipated and thus mitigated given effective warning systems. This project describes the tools proposed over recent decades in India to predict flash flooding and evaluates them using a common observational data set. Design recommendations for flash-flood forecasting systems are provided, taking into account today's availability of high-resolution rainfall data at scales commensurate with flash flooding, their archives, spatial data sets to describe physiographic properties, and ever-increasing computational resources.
+      </p>
+    </section>
+
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      
+      <img class="dashboard-image" >
+      <div>
+        <!-- <img src="../static/dashboard_1.png" alt="1">
+        <img src="../static/dashboard_2.png" alt="3">
+        <img src="../static/dashboard_3.png" alt="4">
+        <img src="../static/dashboard_4.png" alt="5">
+        <img src="../static/dashboard_5.png" alt="6">
+        <img src="../static/dashboard_6.png" alt="7">
+        <img src="../static/dashboard_7.png" alt="8">
+        <img src="../static/dashboard_8.png" alt="9"> -->
+
+        <!-- <p>The following image provides information about dataset specific to India. Click <a href="https://app.powerbi.com/reportEmbed?reportId=3bdb47cb-e914-44e9-8ad8-29543512ead0&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738" style="color: black; font-weight: bold;" target="_blank">HERE</a> to view interactive representation. </p> -->
+
+        <iframe title="demoReportOfFloodArchiveData" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=3bdb47cb-e914-44e9-8ad8-29543512ead0&autoAuth=true&ctid=cca3f0fe-586f-4426-a8bd-b8146307e738" frameborder="0" allowFullScreen="true"></iframe>
+
+
+
+
+
+        
+        
+      </div>
+    </section>
+
+
+    
+    
+
+    <!-- <p class="about-content"> Hi, I'm Digvijay, I'm a coding enthusiast and always curious to learn something new in
+      the field of Computer Science. Beside's programming, I enjoy playing games and watching youtube. 
+      Below I have given my social media links. Happy to have new connections.</p>
+  </div> -->
+
+    
+        
+   
+      
+     
+
+      
+    
+
+    
+
+    <footer class="footer" >
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>info</h4>
+            <ul>
+              <li><a href="/about_us">about us</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4> help</h4>
+            <ul>
+              <li><a href="/faq1">FAQ</a></li>
+              </ul>
+          </div>
+          
+          <!-- <div class="footer-col">
+            <h4></h4>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div> -->
+
+
+          <!-- <div class="footer-col">
+            <h4>follow</h4>
+            <div class="social-links">
+              <a href="https://github.com/Digvijay-Kocharekar" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/digvijay-kocharekar-807944220" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              
+            </div>
+          </div> -->
+          
+        </div>
+      </div>
+   </footer>
+  </body>
+</html>
